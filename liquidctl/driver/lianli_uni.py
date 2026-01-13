@@ -84,7 +84,7 @@ class LianLiUni(UsbHidDriver):
 
         for channel in range(_MIN_CHANNEL, _MAX_CHANNEL + 1):
             current_speed = self._query_current_speed(channel)
-            duty_name = f"Channel {channel}"
+            duty_name = f"fan {channel} speed"
             if current_speed is None:
                 current_speed = 0
             status.append((duty_name, int(current_speed), "rpm"))
